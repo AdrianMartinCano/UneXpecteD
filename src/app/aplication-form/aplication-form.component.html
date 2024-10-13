@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header">
+        <h2>Formulario de Aplicación</h2>
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+            <label for="characterName">Introduce el nombre de personaje</label>
+            <input type="text" id="characterName" name="characterName" [(ngModel)]="characterName"> <br>
+            <label for="discordUser">Introduce tu nombre de Discord</label>
+            <input type="text" id="discordUser" name="discordUser" [(ngModel)]="discordUser"><br>
+            <label for="characterClass">Clase de personaje</label>
+            <select name="characterClass" id="characterClass" [(ngModel)]="characterClass"
+                (change)="onClassChange($event)">
+                <option value="-1" selected>Selecciona una opción</option>
+                <option value="0">Brujo</option>
+                <option value="1">Caballero de la muerte</option>
+                <option value="2">Cazador</option>
+                <option value="3">Cazador de demonios</option>
+                <option value="4">Chamán</option>
+                <option value="5">Druida</option>
+                <option value="6">Evocador</option>
+                <option value="7">Guerrero</option>
+                <option value="8">Mago</option>
+                <option value="9">Monje</option>
+                <option value="10">Paladin</option>
+                <option value="11">Pícaro</option>
+                <option value="12">Sacerdote</option>
+            </select><br>
+            <label for="characterRole">Rol de personaje</label>
+            <select name="characterRole" id="characterRole" [(ngModel)]="characterRole" (change)="onRoleChange($event)">
+                <option value="0">Tanque</option>
+                <option value="1">Healer</option>
+                <option value="2">DPS</option>
+            </select><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>

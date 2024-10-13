@@ -1,0 +1,8 @@
+.gold-line {
+    border: none;
+    /* Quitar el estilo predeterminado */
+    border-top: 2px solid purple;
+    /* Color dorado y grosor de 2px */
+    margin: 0;
+    /* Sin margen superior o inferior */
+}
