@@ -28,6 +28,7 @@
             </select><br>
             <label for="characterRole">Rol de personaje</label>
             <select name="characterRole" id="characterRole" [(ngModel)]="characterRole" (change)="onRoleChange($event)">
+                <option value="-1" selected>Selecciona una opción</option>
                 <option value="0">Tanque</option>
                 <option value="1">Healer</option>
                 <option value="2">DPS</option>

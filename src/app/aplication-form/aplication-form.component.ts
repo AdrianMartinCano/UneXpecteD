@@ -8,19 +8,23 @@ import { Component } from '@angular/core';
 export class AplicationFormComponent {
   characterName: string = '';
   discordUser: string = '';
-  characterClassId: string = '-1';
-  characterClass: string = 'Selecciona una opción'
-  characterRole: string = '0';
+  characterClass: string = '-1'; // Inicializa con el valor predeterminado
+  characterClassText: string = ''; // Almacena el texto seleccionado
+  characterRole: string = '-1'; // Inicializa con el valor predeterminado
+  characterRoleText: string = ''; // Almacena el texto seleccionado
 
   onClassChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
-    this.characterClassId = selectElement.value;
-    this.characterClass = selectElement.options[selectElement.selectedIndex].text;
+    this.characterClass = selectElement.value;
+    this.characterClassText = selectElement.options[selectElement.selectedIndex].text;
+    console.log('Clase seleccionada:', this.characterClass, this.characterClassText);
   }
 
   onRoleChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
-
+    this.characterRole = selectElement.value;
+    this.characterRoleText = selectElement.options[selectElement.selectedIndex].text;
+    console.log('Rol seleccionado:', this.characterRole, this.characterRoleText);
   }
 
   onSubmit(): void {
@@ -29,19 +33,9 @@ export class AplicationFormComponent {
       characterName: this.characterName,
       discordUser: this.discordUser,
       characterClass: this.characterClass,
-      characterClassId: this.characterClassId,
-      characterRole: this.characterRole
-
+      characterClassText: this.characterClassText,
+      characterRole: this.characterRole,
+      characterRoleText: this.characterRoleText
     });
   }
-
-
-  ngOnInit(): void {
-
-
-
-  }
-
-
-
 }
